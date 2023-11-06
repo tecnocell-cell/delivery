@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751016455271",
+    "project_id": "comanda-digiral01",
+    "storage_bucket": "comanda-digiral01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751016455271:android:e4ef242cd7c9dc37fbb8c2",
+        "android_client_info": {
+          "package_name": "com.mycompany.comandadigital"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0J8KRyz4BqmwWXEpmIytSjBbWfng9CoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
