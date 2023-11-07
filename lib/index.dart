@@ -24,3 +24,7 @@ export '/categorias_produtos/lista_porcoes/lista_porcoes_widget.dart'
     show ListaPorcoesWidget;
 export '/categorias_produtos/lista_bebidas/lista_bebidas_widget.dart'
     show ListaBebidasWidget;
+export '/testar/testar_widget.dart' show TestarWidget;
+export '/pages/pedidos/pedidos_widget.dart' show PedidosWidget;
+export '/pages/mesas/mesas_widget.dart' show MesasWidget;
+export '/cardapiolista/cardapiolista_widget.dart' show CardapiolistaWidget;

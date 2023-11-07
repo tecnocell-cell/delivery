@@ -123,10 +123,12 @@ class _ListaPizzasWidgetState extends State<ListaPizzasWidget> {
                   ),
                   StreamBuilder<List<ProdutosRecord>>(
                     stream: queryProdutosRecord(
-                      queryBuilder: (produtosRecord) => produtosRecord.where(
-                        'categoria',
-                        isEqualTo: 'Pizzas',
-                      ),
+                      queryBuilder: (produtosRecord) => produtosRecord
+                          .where(
+                            'categoria',
+                            isEqualTo: 'Pizzas',
+                          )
+                          .orderBy('nome'),
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
@@ -157,88 +159,78 @@ class _ListaPizzasWidgetState extends State<ListaPizzasWidget> {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            elevation: 4.0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 0.0, 5.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Flexible(
-                                    child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
-                                      child: Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(25),
-                                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Flexible(
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    child: Theme(
+                                      data: ThemeData(
+                                        checkboxTheme: CheckboxThemeData(
+                                          visualDensity: VisualDensity.compact,
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
                                         ),
-                                        child: CheckboxListTile(
-                                          value: _model
-                                                  .checkboxListTileValueMap[
-                                              listViewProdutosRecord] ??= false,
-                                          onChanged: (newValue) async {
-                                            setState(() =>
-                                                _model.checkboxListTileValueMap[
-                                                        listViewProdutosRecord] =
-                                                    newValue!);
-                                          },
-                                          title: Text(
-                                            listViewProdutosRecord.nome,
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleLarge,
-                                          ),
-                                          subtitle: Text(
-                                            formatNumber(
-                                              listViewProdutosRecord.preco,
-                                              formatType: FormatType.decimal,
-                                              decimalType:
-                                                  DecimalType.periodDecimal,
-                                              currency: 'R\$ ',
-                                            ),
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                ),
-                                          ),
-                                          tileColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                          dense: true,
-                                          controlAffinity:
-                                              ListTileControlAffinity.trailing,
+                                        unselectedWidgetColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                      ),
+                                      child: CheckboxListTile(
+                                        value: _model.checkboxListTileValueMap[
+                                            listViewProdutosRecord] ??= false,
+                                        onChanged: (newValue) async {
+                                          setState(() =>
+                                              _model.checkboxListTileValueMap[
+                                                      listViewProdutosRecord] =
+                                                  newValue!);
+                                        },
+                                        title: Text(
+                                          listViewProdutosRecord.nome,
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleLarge,
                                         ),
+                                        subtitle: Text(
+                                          formatNumber(
+                                            listViewProdutosRecord.preco,
+                                            formatType: FormatType.decimal,
+                                            decimalType:
+                                                DecimalType.periodDecimal,
+                                            currency: 'R\$ ',
+                                          ),
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                              ),
+                                        ),
+                                        tileColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        activeColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        checkColor:
+                                            FlutterFlowTheme.of(context).info,
+                                        dense: true,
+                                        controlAffinity:
+                                            ListTileControlAffinity.trailing,
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           );
                         },

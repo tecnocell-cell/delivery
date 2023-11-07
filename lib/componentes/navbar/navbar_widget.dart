@@ -100,12 +100,12 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                   borderWidth: 1.0,
                   buttonSize: 50.0,
                   icon: Icon(
-                    FFIcons.kchat4,
+                    Icons.pending_actions,
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 24.0,
+                    size: 30.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('pedidos');
                   },
                 ),
                 Column(
@@ -154,12 +154,12 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                   borderWidth: 1.0,
                   buttonSize: 50.0,
                   icon: Icon(
-                    Icons.notifications_none,
+                    FFIcons.kthLargeOutline,
                     color: FlutterFlowTheme.of(context).primary,
                     size: 24.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('mesas');
                   },
                 ),
                 FlutterFlowIconButton(

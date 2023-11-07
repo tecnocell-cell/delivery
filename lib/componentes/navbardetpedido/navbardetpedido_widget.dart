@@ -88,7 +88,7 @@ class _NavbardetpedidoWidgetState extends State<NavbardetpedidoWidget> {
                   icon: Icon(
                     Icons.home_outlined,
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 24.0,
+                    size: 30.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -100,7 +100,7 @@ class _NavbardetpedidoWidgetState extends State<NavbardetpedidoWidget> {
                   borderWidth: 1.0,
                   buttonSize: 50.0,
                   icon: Icon(
-                    FFIcons.kchat4,
+                    FFIcons.kshoppingBasket,
                     color: FlutterFlowTheme.of(context).primary,
                     size: 24.0,
                   ),
@@ -156,7 +156,7 @@ class _NavbardetpedidoWidgetState extends State<NavbardetpedidoWidget> {
                   icon: Icon(
                     FFIcons.kshare3,
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 24.0,
+                    size: 25.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');

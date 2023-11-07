@@ -14,6 +14,7 @@ import 'schema/adicional_record.dart';
 import 'schema/categoria_record.dart';
 import 'schema/borda_record.dart';
 import 'schema/cliente_record.dart';
+import 'schema/tam_pizzas_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,6 +31,7 @@ export 'schema/adicional_record.dart';
 export 'schema/categoria_record.dart';
 export 'schema/borda_record.dart';
 export 'schema/cliente_record.dart';
+export 'schema/tam_pizzas_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -359,6 +361,43 @@ Future<List<ClienteRecord>> queryClienteRecordOnce({
     queryCollectionOnce(
       ClienteRecord.collection,
       ClienteRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query TamPizzasRecords (as a Stream and as a Future).
+Future<int> queryTamPizzasRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      TamPizzasRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<TamPizzasRecord>> queryTamPizzasRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      TamPizzasRecord.collection,
+      TamPizzasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<TamPizzasRecord>> queryTamPizzasRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      TamPizzasRecord.collection,
+      TamPizzasRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
