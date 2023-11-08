@@ -120,16 +120,10 @@ class _LoginWidgetState extends State<LoginWidget>
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
-          shape: BoxShape.rectangle,
-        ),
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+        child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [

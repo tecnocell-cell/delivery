@@ -28,3 +28,4 @@ export '/testar/testar_widget.dart' show TestarWidget;
 export '/pages/pedidos/pedidos_widget.dart' show PedidosWidget;
 export '/pages/mesas/mesas_widget.dart' show MesasWidget;
 export '/cardapiolista/cardapiolista_widget.dart' show CardapiolistaWidget;
+export '/auth4/auth4_widget.dart' show Auth4Widget;

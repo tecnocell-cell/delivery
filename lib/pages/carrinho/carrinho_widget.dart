@@ -594,7 +594,7 @@ class _CarrinhoWidgetState extends State<CarrinhoWidget> {
                           alignment: AlignmentDirectional(0.00, 0.00),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 5.0, 0.0, 0.0),
+                                5.0, 5.0, 5.0, 5.0),
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,

@@ -181,6 +181,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'cardapiolista',
           path: '/cardapiolista',
           builder: (context, params) => CardapiolistaWidget(),
+        ),
+        FFRoute(
+          name: 'Auth4',
+          path: '/auth4',
+          builder: (context, params) => Auth4Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
