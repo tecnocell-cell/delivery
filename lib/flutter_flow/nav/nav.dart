@@ -93,14 +93,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'listaMesas',
-          path: '/listaMesas',
-          builder: (context, params) => ListaMesasWidget(),
+          name: 'cadMesas',
+          path: '/cadMesas',
+          builder: (context, params) => CadMesasWidget(),
         ),
         FFRoute(
-          name: 'listaProdutos',
-          path: '/listaProdutos',
-          builder: (context, params) => ListaProdutosWidget(),
+          name: 'garconProdutos',
+          path: '/garconProdutos',
+          builder: (context, params) => GarconProdutosWidget(),
         ),
         FFRoute(
           name: 'detPedido',
@@ -111,16 +111,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Carrinho',
           path: '/carrinho',
           builder: (context, params) => CarrinhoWidget(),
-        ),
-        FFRoute(
-          name: 'cadProdutos',
-          path: '/cadProdutos',
-          builder: (context, params) => CadProdutosWidget(),
-        ),
-        FFRoute(
-          name: 'listaCategoria',
-          path: '/listaCategoria',
-          builder: (context, params) => ListaCategoriaWidget(),
         ),
         FFRoute(
           name: 'listaAdicionais',
@@ -153,11 +143,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ListaFritasWidget(),
         ),
         FFRoute(
-          name: 'listaPorcoes',
-          path: '/listaPorcoes',
-          builder: (context, params) => ListaPorcoesWidget(),
-        ),
-        FFRoute(
           name: 'listaBebidas',
           path: '/listaBebidas',
           builder: (context, params) => ListaBebidasWidget(),
@@ -178,14 +163,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MesasWidget(),
         ),
         FFRoute(
-          name: 'cardapiolista',
-          path: '/cardapiolista',
-          builder: (context, params) => CardapiolistaWidget(),
+          name: 'cadAdicionais',
+          path: '/cadAdicionais',
+          builder: (context, params) => CadAdicionaisWidget(),
         ),
         FFRoute(
-          name: 'Auth4',
-          path: '/auth4',
-          builder: (context, params) => Auth4Widget(),
+          name: 'cadBordas',
+          path: '/cadBordas',
+          builder: (context, params) => CadBordasWidget(),
+        ),
+        FFRoute(
+          name: 'cadProduto',
+          path: '/cadProduto',
+          builder: (context, params) => CadProdutoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

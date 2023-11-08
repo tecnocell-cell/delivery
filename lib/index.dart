@@ -1,14 +1,10 @@
 // Export pages
 export '/pages/login/login_widget.dart' show LoginWidget;
-export '/cadastros/lista_mesas/lista_mesas_widget.dart' show ListaMesasWidget;
-export '/categorias_produtos/lista_produtos/lista_produtos_widget.dart'
-    show ListaProdutosWidget;
+export '/cadastros/cad_mesas/cad_mesas_widget.dart' show CadMesasWidget;
+export '/pages/garcon_produtos/garcon_produtos_widget.dart'
+    show GarconProdutosWidget;
 export '/pages/det_pedido/det_pedido_widget.dart' show DetPedidoWidget;
 export '/pages/carrinho/carrinho_widget.dart' show CarrinhoWidget;
-export '/cadastros/cad_produtos/cad_produtos_widget.dart'
-    show CadProdutosWidget;
-export '/cadastros/lista_categoria/lista_categoria_widget.dart'
-    show ListaCategoriaWidget;
 export '/adicionais/lista_adicionais/lista_adicionais_widget.dart'
     show ListaAdicionaisWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
@@ -20,12 +16,12 @@ export '/categorias_produtos/lista_lanches/lista_lanches_widget.dart'
     show ListaLanchesWidget;
 export '/categorias_produtos/lista_fritas/lista_fritas_widget.dart'
     show ListaFritasWidget;
-export '/categorias_produtos/lista_porcoes/lista_porcoes_widget.dart'
-    show ListaPorcoesWidget;
 export '/categorias_produtos/lista_bebidas/lista_bebidas_widget.dart'
     show ListaBebidasWidget;
 export '/testar/testar_widget.dart' show TestarWidget;
 export '/pages/pedidos/pedidos_widget.dart' show PedidosWidget;
 export '/pages/mesas/mesas_widget.dart' show MesasWidget;
-export '/cardapiolista/cardapiolista_widget.dart' show CardapiolistaWidget;
-export '/auth4/auth4_widget.dart' show Auth4Widget;
+export '/cadastros/cad_adicionais/cad_adicionais_widget.dart'
+    show CadAdicionaisWidget;
+export '/cadastros/cad_bordas/cad_bordas_widget.dart' show CadBordasWidget;
+export '/cadastros/cad_produto/cad_produto_widget.dart' show CadProdutoWidget;

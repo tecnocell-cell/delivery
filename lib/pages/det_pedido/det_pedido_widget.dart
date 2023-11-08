@@ -144,12 +144,12 @@ class _DetPedidoWidgetState extends State<DetPedidoWidget> {
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: ClipRRect(
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(0.0),
                                             child: Image.asset(
                                               'assets/images/tempo.png',
                                               width: 50.0,
                                               height: 50.0,
-                                              fit: BoxFit.cover,
+                                              fit: BoxFit.contain,
                                             ),
                                           ),
                                         ),

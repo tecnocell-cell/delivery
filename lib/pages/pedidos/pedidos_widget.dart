@@ -170,7 +170,7 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('listaProdutos');
+                                        context.pushNamed('garconProdutos');
                                       },
                                       child: Icon(
                                         FFIcons.kshoppingBasket,

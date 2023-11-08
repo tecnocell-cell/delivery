@@ -197,7 +197,7 @@ class _MesasWidgetState extends State<MesasWidget> {
                                               ) ??
                                               false;
                                       if (confirmDialogResponse) {
-                                        context.pushNamed('listaProdutos');
+                                        context.pushNamed('garconProdutos');
                                       } else {
                                         return;
                                       }
