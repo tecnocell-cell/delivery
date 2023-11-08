@@ -173,9 +173,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CadBordasWidget(),
         ),
         FFRoute(
-          name: 'cadProduto',
-          path: '/cadProduto',
-          builder: (context, params) => CadProdutoWidget(),
+          name: 'cadProdutos',
+          path: '/cadProdutos',
+          builder: (context, params) => CadProdutosWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -116,11 +116,88 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/875/600',
+                        child: Image.asset(
+                          'assets/images/ingredientes.png',
                           width: 40.0,
                           height: 40.0,
                           fit: BoxFit.cover,
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'PRODUTOS',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 16.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('cadProdutos');
+                        },
+                        text: 'Cadastrar',
+                        options: FFButtonOptions(
+                          width: 90.0,
+                          height: 35.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+              child: Container(
+                width: double.infinity,
+                height: 40.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 7.0,
+                      color: Color(0x33000000),
+                      offset: Offset(0.0, 2.0),
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/images/Mesa_Vazia.png',
+                          width: 40.0,
+                          height: 40.0,
+                          fit: BoxFit.contain,
                         ),
                       ),
                       Expanded(
@@ -193,8 +270,8 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/875/600',
+                        child: Image.asset(
+                          'assets/images/produtos.png',
                           width: 40.0,
                           height: 40.0,
                           fit: BoxFit.cover,
@@ -205,7 +282,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'MESAS',
+                            'CATEGORIAS',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -270,11 +347,11 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/875/600',
+                        child: Image.asset(
+                          'assets/images/adicionar_ingrediente.png',
                           width: 40.0,
                           height: 40.0,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
                       ),
                       Expanded(
@@ -282,84 +359,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'MESAS',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  fontSize: 16.0,
-                                ),
-                          ),
-                        ),
-                      ),
-                      FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: 'Cadastrar',
-                        options: FFButtonOptions(
-                          width: 90.0,
-                          height: 35.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
-                                    color: Colors.white,
-                                  ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
-              child: Container(
-                width: double.infinity,
-                height: 40.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 7.0,
-                      color: Color(0x33000000),
-                      offset: Offset(0.0, 2.0),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/875/600',
-                          width: 40.0,
-                          height: 40.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'MESAS',
+                            'ADICIONAIS',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -424,11 +424,11 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/875/600',
+                        child: Image.asset(
+                          'assets/images/vecteezy_wooden-pizza-board-wooden-tray-wooden-cutting-board-png-3d_9378334_868.png',
                           width: 40.0,
                           height: 40.0,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
                       ),
                       Expanded(
@@ -436,7 +436,7 @@ class _CadastrarWidgetState extends State<CadastrarWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'MESAS',
+                            'BORDAS',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

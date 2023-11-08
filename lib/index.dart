@@ -24,4 +24,5 @@ export '/pages/mesas/mesas_widget.dart' show MesasWidget;
 export '/cadastros/cad_adicionais/cad_adicionais_widget.dart'
     show CadAdicionaisWidget;
 export '/cadastros/cad_bordas/cad_bordas_widget.dart' show CadBordasWidget;
-export '/cadastros/cad_produto/cad_produto_widget.dart' show CadProdutoWidget;
+export '/cadastros/cad_produtos/cad_produtos_widget.dart'
+    show CadProdutosWidget;
