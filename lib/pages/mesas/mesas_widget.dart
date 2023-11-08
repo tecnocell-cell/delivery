@@ -122,7 +122,10 @@ class _MesasWidgetState extends State<MesasWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                   child: StreamBuilder<List<MesaRecord>>(
-                    stream: queryMesaRecord(),
+                    stream: queryMesaRecord(
+                      queryBuilder: (mesaRecord) =>
+                          mesaRecord.orderBy('nemero'),
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {

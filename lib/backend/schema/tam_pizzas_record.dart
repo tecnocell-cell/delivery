@@ -36,11 +36,17 @@ class TamPizzasRecord extends FirestoreRecord {
   int get classifica => _classifica ?? 0;
   bool hasClassifica() => _classifica != null;
 
+  // "sug" field.
+  double? _sug;
+  double get sug => _sug ?? 0.0;
+  bool hasSug() => _sug != null;
+
   void _initializeFields() {
     _tamanho = snapshotData['tamanho'] as String?;
     _descri = snapshotData['descri'] as String?;
     _qmsabores = castToType<int>(snapshotData['qmsabores']);
     _classifica = castToType<int>(snapshotData['classifica']);
+    _sug = castToType<double>(snapshotData['sug']);
   }
 
   static CollectionReference get collection =>
@@ -82,6 +88,7 @@ Map<String, dynamic> createTamPizzasRecordData({
   String? descri,
   int? qmsabores,
   int? classifica,
+  double? sug,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -89,6 +96,7 @@ Map<String, dynamic> createTamPizzasRecordData({
       'descri': descri,
       'qmsabores': qmsabores,
       'classifica': classifica,
+      'sug': sug,
     }.withoutNulls,
   );
 
@@ -103,12 +111,13 @@ class TamPizzasRecordDocumentEquality implements Equality<TamPizzasRecord> {
     return e1?.tamanho == e2?.tamanho &&
         e1?.descri == e2?.descri &&
         e1?.qmsabores == e2?.qmsabores &&
-        e1?.classifica == e2?.classifica;
+        e1?.classifica == e2?.classifica &&
+        e1?.sug == e2?.sug;
   }
 
   @override
   int hash(TamPizzasRecord? e) => const ListEquality()
-      .hash([e?.tamanho, e?.descri, e?.qmsabores, e?.classifica]);
+      .hash([e?.tamanho, e?.descri, e?.qmsabores, e?.classifica, e?.sug]);
 
   @override
   bool isValidKey(Object? o) => o is TamPizzasRecord;

@@ -433,8 +433,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               formatType:
                                                                   FormatType
                                                                       .custom,
-                                                              format: 'R\$ ',
-                                                              locale: '',
+                                                              currency: 'R\$ ',
+                                                              format: '.00',
+                                                              locale: 'pt_BR',
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -605,144 +606,56 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     );
                                   }
                                   List<TamPizzasRecord>
-                                      categoria01TamPizzasRecordList =
+                                      pizzasTamPizzasRecordList =
                                       snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: List.generate(
-                                        categoria01TamPizzasRecordList.length,
-                                        (categoria01Index) {
-                                      final categoria01TamPizzasRecord =
-                                          categoria01TamPizzasRecordList[
-                                              categoria01Index];
+                                        pizzasTamPizzasRecordList.length,
+                                        (pizzasIndex) {
+                                      final pizzasTamPizzasRecord =
+                                          pizzasTamPizzasRecordList[
+                                              pizzasIndex];
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context
-                                                    .pushNamed('listaPizzas');
-                                              },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    5.0,
-                                                                    5.0,
-                                                                    5.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          child: Image.asset(
-                                                            'assets/images/prato-raso.jpg',
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  10.0,
-                                                                  0.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Expanded(
-                                                                child: Text(
-                                                                  categoria01TamPizzasRecord
-                                                                      .tamanho,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        fontSize:
-                                                                            16.0,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Expanded(
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    categoria01TamPizzasRecord
-                                                                        .descri,
-                                                                    'Lorem Ipsum is simply dummy text of the printing and typesetting',
-                                                                  ).maybeHandleOverflow(
-                                                                    maxChars:
-                                                                        50,
-                                                                    replacement:
-                                                                        '…',
-                                                                  ),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .start,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        fontWeight:
-                                                                            FontWeight.w300,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ],
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.asset(
+                                                          'assets/images/prato-raso.jpg',
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  Padding(
+                                                  ],
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
@@ -750,48 +663,165 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
-                                                        Text(
-                                                          'Até ${categoria01TamPizzasRecord.qmsabores.toString()} Sabores',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Text(
+                                                                pizzasTamPizzasRecord
+                                                                    .tamanho,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      fontSize:
+                                                                          16.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
                                                               ),
+                                                            ),
+                                                          ],
                                                         ),
-                                                        Text(
-                                                          categoria01TamPizzasRecord
-                                                              .qmsabores
-                                                              .toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                fontSize: 14.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  pizzasTamPizzasRecord
+                                                                      .descri,
+                                                                  'Lorem Ipsum is simply dummy text of the printing and typesetting',
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 50,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
                                                               ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                'A Partir de ',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                formatNumber(
+                                                                  pizzasTamPizzasRecord
+                                                                      .sug,
+                                                                  formatType:
+                                                                      FormatType
+                                                                          .custom,
+                                                                  currency:
+                                                                      'R\$ ',
+                                                                  format: '.00',
+                                                                  locale:
+                                                                      'pt_BR',
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 50,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  borderRadius: 15.0,
+                                                  borderWidth: 2.0,
+                                                  buttonSize: 40.0,
+                                                  icon: Icon(
+                                                    Icons.navigate_next_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 25.0,
+                                                  ),
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                        'listaPizzas');
+                                                  },
+                                                ),
+                                              ],
                                             ),
                                             Divider(
                                               thickness: 1.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent4,
+                                                      .alternate,
                                             ),
                                           ],
                                         ),
@@ -870,16 +900,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     );
                                   }
                                   List<ProdutosRecord>
-                                      categoria01ProdutosRecordList =
+                                      lanchesProdutosRecordList =
                                       snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: List.generate(
-                                        categoria01ProdutosRecordList.length,
-                                        (categoria01Index) {
-                                      final categoria01ProdutosRecord =
-                                          categoria01ProdutosRecordList[
-                                              categoria01Index];
+                                        lanchesProdutosRecordList.length,
+                                        (lanchesIndex) {
+                                      final lanchesProdutosRecord =
+                                          lanchesProdutosRecordList[
+                                              lanchesIndex];
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
@@ -937,7 +967,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                categoria01ProdutosRecord
+                                                                lanchesProdutosRecord
                                                                     .nome,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -961,12 +991,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  categoria01ProdutosRecord
-                                                                      .descri,
-                                                                  'Lorem Ipsum is simply dummy text of the printing and typesetting',
-                                                                ).maybeHandleOverflow(
+                                                                lanchesProdutosRecord
+                                                                    .descri
+                                                                    .maybeHandleOverflow(
                                                                   maxChars: 50,
                                                                   replacement:
                                                                       '…',
@@ -988,56 +1015,96 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             ),
                                                           ],
                                                         ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                'A Partir de ',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                formatNumber(
+                                                                  lanchesProdutosRecord
+                                                                      .preco,
+                                                                  formatType:
+                                                                      FormatType
+                                                                          .custom,
+                                                                  currency:
+                                                                      'R\$ ',
+                                                                  format: '.00',
+                                                                  locale:
+                                                                      'pt_BR',
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 50,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ],
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'R\$',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              fontSize: 16.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
-                                                      Text(
-                                                        formatNumber(
-                                                          categoria01ProdutosRecord
-                                                              .preco,
-                                                          formatType:
-                                                              FormatType.custom,
-                                                          currency: 'R\$ ',
-                                                          format: '',
-                                                          locale: '',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              fontSize: 14.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
-                                                      ),
-                                                    ],
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  borderRadius: 15.0,
+                                                  borderWidth: 2.0,
+                                                  buttonSize: 40.0,
+                                                  icon: Icon(
+                                                    Icons.navigate_next_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 25.0,
                                                   ),
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                        'listaLanches');
+                                                  },
                                                 ),
                                               ],
                                             ),
@@ -1045,7 +1112,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               thickness: 1.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent4,
+                                                      .alternate,
                                             ),
                                           ],
                                         ),
@@ -1124,16 +1191,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     );
                                   }
                                   List<ProdutosRecord>
-                                      categoria01ProdutosRecordList =
-                                      snapshot.data!;
+                                      fritasProdutosRecordList = snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: List.generate(
-                                        categoria01ProdutosRecordList.length,
-                                        (categoria01Index) {
-                                      final categoria01ProdutosRecord =
-                                          categoria01ProdutosRecordList[
-                                              categoria01Index];
+                                        fritasProdutosRecordList.length,
+                                        (fritasIndex) {
+                                      final fritasProdutosRecord =
+                                          fritasProdutosRecordList[fritasIndex];
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
@@ -1191,7 +1256,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                categoria01ProdutosRecord
+                                                                fritasProdutosRecord
                                                                     .nome,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1215,12 +1280,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  categoria01ProdutosRecord
-                                                                      .descri,
-                                                                  'Lorem Ipsum is simply dummy text of the printing and typesetting',
-                                                                ).maybeHandleOverflow(
+                                                                fritasProdutosRecord
+                                                                    .descri
+                                                                    .maybeHandleOverflow(
                                                                   maxChars: 50,
                                                                   replacement:
                                                                       '…',
@@ -1242,56 +1304,96 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             ),
                                                           ],
                                                         ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                'A Partir de ',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                formatNumber(
+                                                                  fritasProdutosRecord
+                                                                      .preco,
+                                                                  formatType:
+                                                                      FormatType
+                                                                          .custom,
+                                                                  currency:
+                                                                      'R\$ ',
+                                                                  format: '.00',
+                                                                  locale:
+                                                                      'pt_BR',
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 50,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ],
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'R\$',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              fontSize: 16.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
-                                                      Text(
-                                                        formatNumber(
-                                                          categoria01ProdutosRecord
-                                                              .preco,
-                                                          formatType:
-                                                              FormatType.custom,
-                                                          currency: 'R\$ ',
-                                                          format: '',
-                                                          locale: '',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              fontSize: 14.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
-                                                      ),
-                                                    ],
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  borderRadius: 15.0,
+                                                  borderWidth: 2.0,
+                                                  buttonSize: 40.0,
+                                                  icon: Icon(
+                                                    Icons.navigate_next_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 25.0,
                                                   ),
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                        'listaFritas');
+                                                  },
                                                 ),
                                               ],
                                             ),
@@ -1299,7 +1401,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               thickness: 1.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent4,
+                                                      .alternate,
                                             ),
                                           ],
                                         ),
@@ -1378,16 +1480,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     );
                                   }
                                   List<ProdutosRecord>
-                                      categoria01ProdutosRecordList =
+                                      bebidasProdutosRecordList =
                                       snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: List.generate(
-                                        categoria01ProdutosRecordList.length,
-                                        (categoria01Index) {
-                                      final categoria01ProdutosRecord =
-                                          categoria01ProdutosRecordList[
-                                              categoria01Index];
+                                        bebidasProdutosRecordList.length,
+                                        (bebidasIndex) {
+                                      final bebidasProdutosRecord =
+                                          bebidasProdutosRecordList[
+                                              bebidasIndex];
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
@@ -1445,7 +1547,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                categoria01ProdutosRecord
+                                                                bebidasProdutosRecord
                                                                     .nome,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1469,12 +1571,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  categoria01ProdutosRecord
-                                                                      .descri,
-                                                                  'Lorem Ipsum is simply dummy text of the printing and typesetting',
-                                                                ).maybeHandleOverflow(
+                                                                bebidasProdutosRecord
+                                                                    .descri
+                                                                    .maybeHandleOverflow(
                                                                   maxChars: 50,
                                                                   replacement:
                                                                       '…',
@@ -1496,56 +1595,96 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             ),
                                                           ],
                                                         ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                'A Partir de ',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                formatNumber(
+                                                                  bebidasProdutosRecord
+                                                                      .preco,
+                                                                  formatType:
+                                                                      FormatType
+                                                                          .custom,
+                                                                  currency:
+                                                                      'R\$',
+                                                                  format: '.00',
+                                                                  locale:
+                                                                      'pt_BR',
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 50,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w300,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ],
                                                     ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Text(
-                                                        'R\$',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              fontSize: 16.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                      ),
-                                                      Text(
-                                                        formatNumber(
-                                                          categoria01ProdutosRecord
-                                                              .preco,
-                                                          formatType:
-                                                              FormatType.custom,
-                                                          currency: 'R\$ ',
-                                                          format: '',
-                                                          locale: '',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              fontSize: 14.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
-                                                      ),
-                                                    ],
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  borderRadius: 15.0,
+                                                  borderWidth: 2.0,
+                                                  buttonSize: 40.0,
+                                                  icon: Icon(
+                                                    Icons.navigate_next_sharp,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 25.0,
                                                   ),
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                        'listaBebidas');
+                                                  },
                                                 ),
                                               ],
                                             ),
@@ -1553,7 +1692,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               thickness: 1.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent4,
+                                                      .alternate,
                                             ),
                                           ],
                                         ),
